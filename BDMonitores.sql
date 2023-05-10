@@ -278,6 +278,14 @@ FROM Estudiantes, Monitores
 WHERE Estudiantes.ID_estudiante = Monitores.ID_estudiante
 AND (Estudiantes.Nombre LIKE '%U%' OR Estudiantes.Apellido LIKE '%U%')
 
+-- Mostrar los monitores por una clase específica
+
+SELECT Monitores.ID_monitor, Estudiantes.Nombre, Clases.Nombre_clase
+FROM Monitores
+JOIN Estudiantes ON Monitores.ID_estudiante = Estudiantes.ID_estudiante
+JOIN Clases ON Monitores.ID_clase = Clases.ID_clase
+WHERE Clases.Codigo_clase = 'CSC101'; --Aquí podemos cambiar código según la clase
+
 -- Contar monitores mayores de edad
 
 SELECT COUNT(*) AS Monitores_Mayores
