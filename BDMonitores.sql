@@ -25,6 +25,9 @@ CREATE TABLE Clases (
     Horario nvarchar(50)
 );
 
+ALTER TABLE Clases
+ADD Activo bit default 'true';
+
 -- Crear tabla Monitores
 CREATE TABLE Monitores (
     ID_monitor int PRIMARY KEY,
